@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Number Guessing Game</title>
+        <style>
+            html{
+                font-family: sans-serif;
+            }
+            body{
+                width: 50%;
+                max-width: 800px;
+                min-width: 400px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Guess The Number</h1>
+        <p>We have selected a random number between 1 - 10.
+        See if you can guess it.</p>
+        <!-- Create the form for guessing game -->
+        <div class="form">
+            <label for="guessField">Enter a guess: </label>
+            <input type="text" id="guessField" class="guessField">
+            <input type="submit" value="Submit guess" class="guessSubmit" id="submitguess">
+        </div>
+
+        <!-- 1. Add the script tag that will tell the browser we are going to use JavaScript
+            2. Create a variable named y and assign the following value: Math.floor(Math.random() * 10 + 1)
+            3. Create one more variable that will keep track of the number of guesses. Name it guess and set the value to 1.
+            4. Add the following line of code:
+            5. Create one more variable that will hold the number guessed by user
+            6. Using conditional statments and the lines of code bellow create the logic to check if the user guessed correctly
+            7. close the script tag -->
+        <script type="text/javajavascript">
+            var y = Math.floor(Math.random() * 10 + 1);
+            var guess = 1;
+            document.getElementById("submitguess").onclick = function(){
+                var x = document.getElementById("guessField").value;
+                if(x == y){
+                    alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN " +  guess + " GUESS ");
+                }else{
+                    alert("You did not guess correctly " + guess + " GUESS ")
+                }
+            }
+        </script>
+    </body>
+</html>

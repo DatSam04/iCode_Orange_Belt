@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lesson 1</title>
+        <link rel="stylesheet" href="lesson1.css">
+        <script async src="lesson1.js"></script>
+    </head>
+    <body>
+        <!-- Tic-Tac-Toe -->
+        <div class="tic-tac-toe">
+            <h2>Tic-Tac-Toe Game</h2>
+            <button id="start-btn" type="button" onclick="startGame">Start Game</button>
+            <!-- Game Board -->
+            <table id="game-board" style="display: none;">
+                <tr>
+                    <td id="grid1" onclick="addMove(this)"></td>
+                    <td id="grid2" onclick="addMove(this)"></td>
+                    <td id="grid3" onclick="addMove(this)"></td>
+                </tr>
+                <tr>
+                    <td id="grid4" onclick="addMove(this)"></td>
+                    <td id="grid5" onclick="addMove(this)"></td>
+                    <td id="grid6" onclick="addMove(this)"></td>
+                </tr>
+                <tr>
+                    <td id="grid7" onclick="addMove(this)"></td>
+                    <td id="grid8" onclick="addMove(this)"></td>
+                    <td id="grid9" onclick="addMove(this)"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

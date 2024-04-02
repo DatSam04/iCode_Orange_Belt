@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <body>
+        <h2>My First JavaScript</h2>
+
+        <p>JavaScript can show hidden HTML elements.</p>
+
+        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+        Click me to display Date and Time</button>
+
+        <p id="demo"></p>
+
+        <!-- onclick event -->
+        <h2>JavaScript HTML Events</h2>
+        <h2 onclick="this.innerHTML='Youfound te secret text'">Click on this text!</h2>
+
+        <!-- onmouseover and onmouseout events -->
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#CBC1E1;width:120px;height:20px;padding:40px">
+        Mouse Over Me</div>
+
+        <script>
+            function mOver(obj){
+                obj.innerHTML = "Secret Text"
+            }
+
+            function mOut(obj){
+                obj.innerHTML = "Mouse Over Me"
+            }
+        </script>
+    </body>
+
+    <!-- <script>
+        document.getElementById("demo").innerHTML = "Date: " + Date();
+    </script> -->
+</html>

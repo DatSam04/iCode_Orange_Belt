@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Simple Web Page</title>
+    </head>
+    <body>
+        <h2>Simple Clock Trick</h2>
+        <div onclick="clock(this)">Click here to find clock</div>
+        <br><br>
+        <div id="clock" style="display: none;" onmouseover="mOver(this)" onmouseout="mOut(this)">Clock</div>
+
+        <script>
+            function mOver(obj){
+                obj.innerHTML = Date();
+            }
+
+            function mOut(obj){
+                obj.innerHTML = "Clock"
+            }
+
+            function clock(obj){
+                document.getElementById("clock").style.display = "block";
+                obj.style.display = "none";
+            }
+        </script>
+    </body>
+</html>
