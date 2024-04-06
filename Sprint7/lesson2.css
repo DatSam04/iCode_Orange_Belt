@@ -1,0 +1,48 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, aqua, red);
+}
+
+.todo_board{
+    background-color: white;
+    position: relative;
+    left: 30vw;
+    top: 10vh;
+    text-align: center;
+    width: 40vw;
+    height: 80vh;
+    border: 1px solid black;
+}
+
+#newTask{
+    margin-left: 4.5vw;
+    height: 6.5vh;
+}
+
+.cur_task{
+   display: flex;
+}
+
+.task button{
+    position: fixed;
+    right: 32vw;
+    margin: 1vh 1vw;
+    font-size: 2vh;
+}
+
+.cur_task p{
+    position: relative;
+    top: 1vh;
+    margin-left: 2vw;
+}
+
+.cur_task input{
+    margin-left: 8vw;
+}
+
+/* CSS pseudo class */
+.strike-through{
+    text-decoration: line-through;
+    color: grey;
+}

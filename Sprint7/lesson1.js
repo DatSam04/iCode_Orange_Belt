@@ -64,6 +64,16 @@ while(i < 6){
 console.log(my_Course);
 
 // Function
+function mySchool(name){
+    console.log(name + " is the school I'm studying coding")
+}
+
+// Anonymous function / function without name
+document.getElementById("start-btn").onclick = function(){
+    mySchool("iCode")
+}
+
+
 // Create a tic-tac-toe game
 // create a function to start the game
 var startBtn = document.getElementById("start-btn");
