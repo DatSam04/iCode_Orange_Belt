@@ -15,6 +15,20 @@ body{
     border: 1px solid black;
 }
 
+.add-btn{
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 4px;
+}
+.add-btn:hover{
+    background-color: #0056b3;
+}
+
 #newTask{
     margin-left: 4.5vw;
     height: 6.5vh;

@@ -111,7 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
         div.className = 'cur_task'
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.addEventListener('change', () => { // Using an arrow function here
+        // Using an arrow function here
+        checkbox.addEventListener('change', () => {
           div.classList.toggle('strike-through', checkbox.checked);
         });
 
