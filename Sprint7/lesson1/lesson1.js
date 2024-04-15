@@ -119,19 +119,25 @@ function checkGameStatus(){
     for(let i = 0; i < winCombination.length; i++){
         var curComb = winCombination[i];
         if(curTable[curComb[0]] === 'X' && curTable[curComb[1]] === 'X' && curTable[curComb[2]] === 'X'){
-            alert("Congratulation X is the Winner");
-            resetGame();
+            setTimeout(() => {
+                alert("Congratulation X is the Winner");
+                resetGame();
+            }, 25);
             return;
         }else if(curTable[curComb[0]] === 'O' && curTable[curComb[1]] === 'O' && curTable[curComb[2]] === 'O'){
-            alert("Congratulation O is the Winner");
-            resetGame();
+            setTimeout(() => {
+                alert("Congratulation O is the Winner")
+                resetGame();
+            }, 25);
             return;
         }
     }
     // Display tie status if nobody wins
     if(tie){
-        alert("Tie Game. Play another game?");
-        resetGame();
+        setTimeout(() => {
+            alert("Tie Game. Play another game?");
+            resetGame();
+        }, 25);
     }
 }
 
@@ -149,51 +155,3 @@ function addMove(td){
     }
     checkGameStatus();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Difference between let, var, and const
-// let and const are block-scoped, so we can't redeclare variable with let and const
-// let student = "Mike"
-// let student = "Aya" //SyntaxError
-
-// const friend = "Bob"
-// const friend = "Vicky"
-
-// Var is global-scoped or function-scoped, so variable can be redeclare using var.
-// var course = "YellowBelt";
-// var course = "GreenBelt";
-
-// // if we print i outside of the loops, it will return undefined because we only declare i inside the loop, so it only exist inside the loop
-// for(let i = 0; i < 4; i++){
-//     console.log(i);
-// }
-// console.log(i); // ReferenceError
-
-// if(true){
-//     let movie = "youtube";
-//     var place = "office";
-//     const name = "iCode";
-//     console.log("Inside if: " + name);
-//     console.log("Inside if: " + place);
-//     console.log("Inside if: " + movie);
-// }
-// console.log("Outside if: " + name); // No error, but name is not defined
-// console.log("Outside if: " + place);
-// console.log("Outside if: " + movie); // ReferenceError
