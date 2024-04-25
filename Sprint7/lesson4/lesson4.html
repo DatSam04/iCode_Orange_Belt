@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lesson 3</title>
+        <link rel="stylesheet" href="lesson4.css">
+        <script defer src="lesson4.js"></script>
+    </head>
+    <body>
+        <!-- DOM Traversal -->
+        <div class="grandparent" id="grandparent">
+            <div class="parent">
+                <div class="child" id="child-one"></div>
+                <div class="child"></div>
+            </div>
+            <div class="parent">
+                <div class="child"></div>
+                <div class="child"></div>
+            </div>
+        </div>
+
+        <!-- DOM Manipulation -->
+        <!-- Toggle Button with data- attribute -->
+        <button data-modal-id="modal-1">Open Modal 1</button>
+        <button data-modal-id="modal-2">Open Modal 2</button>
+
+        <div id="modal-1">Modal 1</div>
+        <div id="modal-2">Modal 2</div>
+
+        <!-- Modify element with various DOM method -->
+        <div id="modify_element">
+            <span id="iCode">iCode</span>
+            <br>
+            <span id="Bellevue">Bellevue</span>
+            <br>
+            <span id="attribute">Attribute</span>
+            <br>
+            <span id="data">Data</span>
+            <br>
+            <span id="sp1">Class</span>
+        </div>
+    </body>
+</html>

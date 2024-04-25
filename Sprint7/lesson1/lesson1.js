@@ -1,5 +1,47 @@
 // Lesson 1: Review old materials, defer, and async
 // Variables
+// Var is scoping at function-level
+// Let is scoping at block-level
+function myVar(){
+    var num = 1; //remove this won't change anything
+    if(true){
+        var num = 2;
+        console.log(num); // print 2
+    }
+    console.log(num); // print 2
+}
+
+function myLet(){
+    var num = 1;
+    if(true){
+        // this variable will only available inside this if statement
+        let num = 2;
+        console.log(num); // print 2
+    }
+    console.log(num) // print 1
+}
+myVar();
+myLet();
+
+// Function scope and block scope
+function testScope(){
+    if(true){
+        var fn = "iCode";
+        var block = "Belt";
+        if(true){
+            var fn = "Bellevue";
+            let block = "Course";
+            console.log(fn);// print Bellevue
+            console.log(block);//print Course
+        }
+        console.log(fn);// print Bellevue
+        console.log(block);// print Belt
+    }
+    console.log(fn);// print Bellevue
+    console.log(block);// print Belt
+}
+testScope();
+
 let team = 6;
 var course = ["Junior Belt", "Foundation Belt", "White Belt", "Orange Belt", "Yellow Belt", "Green Belt"];
 var class_time = ["2pm-4pm", "4pm-6pm", "6pm-8pm"];
@@ -29,19 +71,19 @@ switch (level){
 // Use for loops to print all courses
 console.log("Courses: ")
 for(let i = 0; i < course.length; i++){
+    // Print each element in course
     console.log(course[i]);
 }
 
 // Print all available course using for/in
-console.log("Available Course: ")
 for(let course in available_Course){
-    //course contains the properties(the index(0,1,2,3,...)) of the object.
+    //course contains the properties(0,1,2,3,...) of the object.
     console.log(available_Course[course]);
 }
 
 // Print all class time using for/of
-console.log("Class Time: ")
 for(let time of class_time){
+    // time contains value (element) of class_time
     console.log(time);
 }
 
@@ -63,10 +105,24 @@ while(i < 6){
 }
 console.log(my_Course);
 
+// do/while loop
+let isTen = false;
+let curNum = 1;
+do{
+    // Check if curNum equal 10
+    if(curNum === 10){
+        isTen = true;
+    }
+    // Increment curNum to prevent infinite loop
+    curNum++;
+}while(isTen !== true);
+
 // Function
 function mySchool(name){
-    console.log(name + " is the school I'm studying coding")
+    console.log(name + " Coding School")
 }
+// Print iCode Bellevue Coding School
+mySchool("iCode Bellevue");
 
 // Anonymous function / function without name
 document.getElementById("start-btn").onclick = function(){
@@ -155,3 +211,4 @@ function addMove(td){
     }
     checkGameStatus();
 }
+

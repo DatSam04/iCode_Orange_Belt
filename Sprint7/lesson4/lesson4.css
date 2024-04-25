@@ -1,0 +1,36 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    border: none;
+}
+
+.grandparent{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 800px;
+    height: 250px;
+    background-color: orange;
+    border: 2px solid black;
+}
+
+.parent{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    top: 30px;
+    width: 320px;
+    height: 175px;
+    background-color: lightgreen;
+    border: 2px solid black;
+
+}
+
+.child{
+    position: relative;
+    top: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 2px solid black;
+}

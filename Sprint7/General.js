@@ -167,3 +167,29 @@ console.log(numList.includes(4));
 // true
 console.log(numList.includes(3));
 // false
+
+// Reference vs Value
+let num = 10;
+let word = "test";
+let numplus = num; //copy the value of num and assign to numplus
+numplus += 1;
+
+console.log(`num = ${num}`); //num = 10
+console.log(`word = ${word}`); //word = test
+console.log(`numplus = ${numplus}`); // numplus = 11
+
+let c = [1,2];
+let d = c; //set d to reference the memory address where c references from.
+d = [3,4]; //Set d to a brand new variable and assign the value to a different memory address
+d.push(6);
+
+console.log(`c = ${c}`); // c = 1,2
+console.log(`d = ${d}`); // d = 3,4,6
+
+var first = [1,2];
+var second = first;
+//both will print true
+console.log(first === second);
+console.log(first == second);
+
+// DOM Traversal
