@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wordle Game</title>
+        <link rel="stylesheet" href="wordle.css">
+        <script defer src="wordle.js"></script>
+    </head>
+    <body>
+        <div id="intro-section">
+            <h1 id="title">Wordle</h1>
+            <button type="button" id="startBtn" onclick="setUp()">Start Game</button>
+        </div>
+
+        <div class="wordle" id="wordle" style="display: none;">
+            <h1 id="game-title">Wordle</h1>
+            <div class="game-board" id="game-board">
+                <div class="row wordle-row">
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                </div>
+                <div class="row wordle-row">
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                </div>
+                <div class="row wordle-row">
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                </div>
+                <div class="row wordle-row">
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                </div>
+                <div class="row wordle-row">
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                </div>
+                <div class="row wordle-row">
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                    <input type="text" class="column" maxlength="1" size="1" disabled>
+                </div>
+
+                <div class="input-section">
+                    <input type="text" maxlength="5">
+                    <button type="submit" onclick="fillBoard()">Enter</button>
+                </div>
+
+                <!-- This section is for the lab in event listener slides -->
+                <!-- <div class="keyboard-section">
+                    <div class="row">
+                        <div class="keyBtn" id="q" onclick="addLetter(this)">Q</div>
+                        <div class="keyBtn" id="w" onclick="addLetter(this)">W</div>
+                        <div class="keyBtn" id="e" onclick="addLetter(this)">E</div>
+                        <div class="keyBtn" id="r" onclick="addLetter(this)">R</div>
+                        <div class="keyBtn" id="t" onclick="addLetter(this)">T</div>
+                        <div class="keyBtn" id="y" onclick="addLetter(this)">Y</div>
+                        <div class="keyBtn" id="u" onclick="addLetter(this)">U</div>
+                        <div class="keyBtn" id="i" onclick="addLetter(this)">I</div>
+                        <div class="keyBtn" id="o" onclick="addLetter(this)">O</div>
+                        <div class="keyBtn" id="p" onclick="addLetter(this)">P</div>
+                    </div>
+                    <div class="row">
+                        <div class="keyBtn" id="a" onclick="addLetter(this)">A</div>
+                        <div class="keyBtn" id="s" onclick="addLetter(this)">S</div>
+                        <div class="keyBtn" id="d" onclick="addLetter(this)">D</div>
+                        <div class="keyBtn" id="f" onclick="addLetter(this)">F</div>
+                        <div class="keyBtn" id="g" onclick="addLetter(this)">G</div>
+                        <div class="keyBtn" id="h" onclick="addLetter(this)">H</div>
+                        <div class="keyBtn" id="j" onclick="addLetter(this)">J</div>
+                        <div class="keyBtn" id="k" onclick="addLetter(this)">K</div>
+                        <div class="keyBtn" id="l" onclick="addLetter(this)">L</div>
+                    </div>
+                    <div class="row">
+                        <div class="keyBtn" id="enter" onclick="addLetter(this)">ENTER</div>
+                        <div class="keyBtn" id="z" onclick="addLetter(this)">Z</div>
+                        <div class="keyBtn" id="x" onclick="addLetter(this)">X</div>
+                        <div class="keyBtn" id="c" onclick="addLetter(this)">C</div>
+                        <div class="keyBtn" id="v" onclick="addLetter(this)">V</div>
+                        <div class="keyBtn" id="b" onclick="addLetter(this)">B</div>
+                        <div class="keyBtn" id="n" onclick="addLetter(this)">N</div>
+                        <div class="keyBtn" id="m" onclick="addLetter(this)">M</div>
+                        <div class="keyBtn" id="del" onclick="addLetter(this)">&#9003;</div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </body>
+</html>

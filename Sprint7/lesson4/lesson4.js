@@ -103,6 +103,7 @@ data.dataset.number = 4;
 data.dataset.lastName = "Office";
 delete data.dataset.currentCourse;
 
+// Toggle button show and hide
 // const buttons = document.querySelectorAll("[data-modal-id]")
 // buttons.forEach(button => {
 //   button.addEventListener("click", () => {

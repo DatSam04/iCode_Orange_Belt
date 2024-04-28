@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, green, aqua);
+}
+
+#title{
+    position: relative;
+    top: 30vh;
+    text-align: center;
+    font-size: 60px;
+}
+
+#startBtn{
+    position: relative;
+    width: 10vw;
+    height: 6vh;
+    top: 40vh;
+    left: 45vw;
+}
+
+.wordle{
+    width: 40vw;
+    height: 80vh;
+    position: relative;
+    top: 2vh;
+    left: 30vw;
+}
+
+#game-title{
+    position: relative;
+    bottom: 1.5vh;
+    text-align: center;
+}
+
+.game-board{
+    position: relative;
+    height: 85vh;
+}
+
+.row{
+    height: 8vh;
+    display: flex;
+    margin-top: 1.4vh;
+    justify-content: center;
+}
+
+.column{
+    width: 4vw;
+    height: 8vh;
+    margin-left: 0.5vw;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    border: 2px solid grey;
+}
+
+.input-section{
+    position: relative;
+    top: 8vh;
+    text-align: center;
+}
+
+
+/* .keyboard-section{
+    position: relative;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.keyBtn{
+    width: 3.5vw;
+    height: 6vh;
+    margin-left: 0.40vw;
+    padding-top: 2vh;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: lightgrey;
+    text-align: center;
+    cursor: pointer;
+}
+
+#enter{
+    width: 6vw;
+    font-size: 16px;
+} */
