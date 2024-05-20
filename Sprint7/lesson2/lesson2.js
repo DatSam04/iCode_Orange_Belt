@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to add a new task
     const addTask = () => {
+        // .trim() method of string values remove whitespace from both end of the string and return a new string without modifying the original string
       const taskText = newTaskInput.value.trim();
       if (taskText) {
         // group (checkbox, task_name, and delete button)of a task into div

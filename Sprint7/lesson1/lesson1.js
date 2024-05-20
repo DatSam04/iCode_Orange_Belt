@@ -175,26 +175,22 @@ function checkGameStatus(){
     for(let i = 0; i < winCombination.length; i++){
         var curComb = winCombination[i];
         if(curTable[curComb[0]] === 'X' && curTable[curComb[1]] === 'X' && curTable[curComb[2]] === 'X'){
-            setTimeout(() => {
                 alert("Congratulation X is the Winner");
                 resetGame();
-            }, 25);
-            return;
-        }else if(curTable[curComb[0]] === 'O' && curTable[curComb[1]] === 'O' && curTable[curComb[2]] === 'O'){
-            setTimeout(() => {
+                return;
+            }
+        else if(curTable[curComb[0]] === 'O' && curTable[curComb[1]] === 'O' && curTable[curComb[2]] === 'O'){
                 alert("Congratulation O is the Winner")
                 resetGame();
-            }, 25);
             return;
         }
     }
+
     // Display tie status if nobody wins
     if(tie){
-        setTimeout(() => {
             alert("Tie Game. Play another game?");
             resetGame();
-        }, 25);
-    }
+        };
 }
 
 

@@ -60,4 +60,10 @@
 
 /* LAB: To-Do List
     Today, we will add a method, DOMContentLoaded, to the document using event listener function
+    1. Initialize 3 variable to connect to the 3 elements we create in HTML files, input, button, and task_div
+    2. Create an arrow function for adding task and assigned it to a variable called addTask
+        a. Create a variable called taskText and stored the name of the new task in it using variable.value.trim()
+        b. Use an if conditional statement to prevent empty task name if(variable_name)
+        c. Inside the
+    3. Add the click feature to the button that will activate the addTask function when clicking the button
 */
