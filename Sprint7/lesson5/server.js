@@ -20,35 +20,40 @@ function readData(){
     }
 }
 
-// Function to write data from the file
-function writeData(){
+// Function to write data to the file
+function writeData(data){
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2), 'utf8');
 }
-
-// In-memory "database"
-let data = readData();
 
 // serve static files from the 'lab_ToDoList' folder
 app.use(express.static(path.join(__dirname, 'lab_ToDoList')));
 
 // Endpoint to get data
 app.get('/data', (req, res) => {
+    const data = readData();
     res.json(data);
+    res.status(500).send({error: 'Failed to read data'});
 });
 
 // Endpoint to write data
 app.post('/data', (req, res) => {
-    const newTask = req.body;
-    newTask.id = Date.now().toString(); //Assign a unique ID based on timestamp
-    data.push(newTask);
-    writeData(data);
-    res.status(201).send(newTask);
+    try{
+        const newTask = req.body;
+        newTask.id = Date.now().toString(); //Assign a unique ID based on timestamp
+        let data = readData();
+        data.push(newTask);
+        writeData(data);
+        res.status(201).send(newTask);
+    }catch(error){
+        res.status(500).send({error: 'Failed to read data'});
+    }
 });
 
 
 // Endpoint to delete data
 app.delete('/data/:id', (req, res) => {
     const id = req.params.id;
+    const data = readData();
     const index = data.findIndex(item => item.id === id);
 
     if(index !== -1){

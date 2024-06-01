@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try{
       const response = await fetch('/data');
       const tasks = await response.json();
+      taskList.innerHTML = '';
       tasks.forEach(task => renderTask(task));
     }catch (error){
       console.error('Error fetching tasks:', error);
@@ -61,9 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           body: JSON.stringify(newTask)
         });
-        const savedTask = await response.json();
-        renderTask(savedTask);
-        newTaskInput.value = ''; // clear input
+        if(response.ok){
+          const savedTask = await response.json();
+          renderTask(savedTask);
+          newTaskInput.value = ''; // clear input
+        }else{
+          console.error('Failed to add task:', await response.text());
+        }
       }catch(error){
         console.error('Failed to add task:', error)
       }
@@ -74,5 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
   addTaskButton.addEventListener('click', addTask);
 
   // Fetch and render tasks on page load
-  fetchTasks();
+  setInterval(fetchTasks, 100);
 });
