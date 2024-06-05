@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch('/coffee')
             const data = await response.json();
-            const hotCoffee = data.filter(coffee => coffee.type === "iced");
-            return hotCoffee;
+            const icedCoffee = data.filter(coffee => coffee.type === "iced");
+            return icedCoffee;
         } catch(err){
             console.log("Error fetching Data", err);
         }
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // create a card for each coffee item in the server
         data.forEach(coffee => {
-            console.log(coffee);
+            // console.log(coffee);
             /* Adding each coffee card to the page
                 1. Create a div element to hold all HTML elements and assign class name, 'card', to it
                 2. Create a h2 element and store the title from data to the textContent
@@ -48,6 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
             const title = document.createElement('h2');
             title.textContent = coffee.title;
 
+            // Add item to cart button
+            const add_Btn = document.createElement('p');
+            add_Btn.id = "add_btn";
+            add_Btn.textContent = "+"
+            add_Btn.addEventListener('click', async () => {
+                try{
+                    const response = await fetch('/cart', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(coffee)
+                      });
+                }catch(error){
+                    console.error('Failed to add item:', error);
+                }
+            });
+
             // 3.
             const description = document.createElement('p');
             description.textContent = coffee.description;
@@ -62,6 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // 6.
             card.appendChild(title);
+            card.appendChild(add_Btn);
             card.appendChild(description);
             card.appendChild(ingredients);
             card.appendChild(img)
