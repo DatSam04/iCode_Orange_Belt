@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.cards-container');
+    const cart_text = document.querySelector('#cart_text');
+    const checkout = document.querySelector('.checkout_Btn');
 
     const fetchTasks = async () => {
         try{
@@ -13,14 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderItem = async () => {
         const newCards = document.createDocumentFragment();
-        const item = await fetchTasks();
-        item.forEach(coffee => {
+        const items = await fetchTasks();
+        if(items.length === 0){
+            cart_text.style.display = 'block';
+        }
+        items.forEach(coffee => {
             // console.log(coffee);
             /* Adding each coffee card to the page
                 1. Create a div element to hold all HTML elements and assign class name, 'card', to it
                 2. Create an img element to display the coffee image. Store the image from data to src
                 3. Create a h2 element and store the title from data to the textContent
-                4. Create an input area to modify amount of an item
+                4. Create an input area to modify amount of an items
                     a. a text area to display the amount
                     b. two buttons for increase and decrease the amount
             */
@@ -47,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // textBox.textContent = `Amount: ${coffee.amount}`; //without button to change amount
             textBox.textContent = coffee.amount; //with add and remove button to change amount
 
-            // Add item to cart button
+            // Add items to cart button
             const add_Btn = document.createElement('p');
             add_Btn.id = "add_btn";
             add_Btn.textContent = "+";
@@ -64,11 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         renderItem();
                     }
                 }catch(error){
-                    console.error('Failed to add item:', error);
+                    console.error('Failed to add items:', error);
                 }
             });
 
-            // Remove item from cart button
+            // Remove items from cart button
             const remove_Btn = document.createElement('p');
             remove_Btn.id = 'remove_btn';
             remove_Btn.textContent = "-";
@@ -97,7 +102,37 @@ document.addEventListener('DOMContentLoaded', () => {
             newCards.appendChild(card);
         });
         container.innerHTML = '';
+        checkout.innerHTML = '';
         container.appendChild(newCards);
+        if(container.innerHTML !== ''){
+            cart_text.style.display = 'none';
+            const checkout_Btn = document.createElement('button');
+            checkout_Btn.type = "button";
+            checkout_Btn.id = "checkout_Btn";
+            checkout_Btn.textContent = "Checkout";
+            checkout_Btn.addEventListener('click', async() =>{
+                const deletePromise = []
+                // Removing all items in the cart
+                items.forEach(async (item) => {
+                    // Each delete api call will decrease the amount by one
+                    // Use for loop to ensure removing all items with amount more than one
+                    for(let i = 0; i < item.amount; i++){
+                        const response = await fetch(`/cart/${item.id}`, { method: 'DELETE' });
+                        if(response.ok){
+                            console.log(response.text());
+                        }else{
+                            console.error('Error deleting task:', await response.text());
+                        }
+                        deletePromise.push(response)
+                    }
+                });
+                await Promise.all(deletePromise)
+                setTimeout(() => {
+                    window.location.href = '/checkout.html';
+                }, 1000);
+            })
+            checkout.appendChild(checkout_Btn);
+        }
     }
 
     // renderItem();

@@ -54,5 +54,7 @@ h1 {
     top: 1.2vh;
 }
 
-
+#add_btn:hover{
+    cursor: pointer;
+}
 
