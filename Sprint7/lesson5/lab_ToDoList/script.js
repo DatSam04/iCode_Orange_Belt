@@ -79,5 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
   addTaskButton.addEventListener('click', addTask);
 
   // Fetch and render tasks on page load
-  setInterval(fetchTasks, 100);
+  fetchTasks()
+  setInterval(fetchTasks, 1000);
 });
