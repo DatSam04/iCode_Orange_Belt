@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             add_Btn.textContent = "+";
             add_Btn.addEventListener('click', async () => {
                 try{
+                    // Send API Post request to the server
                     const response = await fetch('/cart', {
                         method: 'POST',
                         headers: {
@@ -79,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             remove_Btn.textContent = "-";
             remove_Btn.addEventListener('click', async () => {
                 try{
+                    // Send API delete request to the server with item id
                     const id = card.getAttribute('data-id');
                     const response = await fetch(`/cart/${id}`, { method: 'DELETE' });
                     if(response.ok){
@@ -104,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = '';
         checkout.innerHTML = '';
         container.appendChild(newCards);
+        // Add the checkout button to the cart page if there is item in the shopping cart
         if(container.innerHTML !== ''){
             cart_text.style.display = 'none';
             const checkout_Btn = document.createElement('button');
@@ -127,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 await Promise.all(deletePromise)
+                // Slow the process of switching page to ensure all items are deleted
                 setTimeout(() => {
                     window.location.href = '/checkout.html';
                 }, 1000);
