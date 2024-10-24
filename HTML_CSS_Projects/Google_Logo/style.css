@@ -1,0 +1,66 @@
+body{
+    background-color: black;
+}
+
+.logo{
+    position: absolute;
+    left: 45%;
+    top: 35%;
+    width: 100px;
+    height: 100px;
+    border-top: 15px solid #ea4335;
+    border-right: 15px solid #4285f4;
+    border-bottom: 15px solid #34aB53;
+    border-left: 15px solid #fbbc05;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.logo::before{
+    content: "";
+    position: absolute;
+    background-color: #4285f4;
+    width: 55px;
+    height: 15px;
+    top: 50%;
+    right: -13px;
+    transform: translateY(-50%);
+}
+
+.logo::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -18px;
+    right: -18px;
+    border-top: 60.5px solid black;
+    border-right: 33px solid black;
+}
+
+.logo:hover{
+    color: white;
+    content: "Google";
+    position: absolute;
+    top: 0;
+    left: 35%;
+}
+
+.neon {
+    position: absolute;
+    left: 40vw;
+    bottom: 25vh;
+    font-size: 80px;
+
+    /* Neon Glow Effect */
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+

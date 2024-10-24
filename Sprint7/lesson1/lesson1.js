@@ -188,9 +188,9 @@ function checkGameStatus(){
 
     // Display tie status if nobody wins
     if(tie){
-            alert("Tie Game. Play another game?");
-            resetGame();
-        };
+        alert("Tie Game. Play another game?");
+        resetGame();
+    };
 }
 
 

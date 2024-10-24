@@ -104,21 +104,21 @@ data.dataset.lastName = "Office";
 delete data.dataset.currentCourse;
 
 // Toggle button show and hide
-// const buttons = document.querySelectorAll("[data-modal-id]")
-// buttons.forEach(button => {
-//   button.addEventListener("click", () => {
-//     const modalId = button.dataset.modalId
-//     const modal = document.getElementById(modalId)
-//     if(modal.classList.value === ''){
-//         modal.classList.add("show")
-//     }else if(modal.classList.value === "hide"){
-//         modal.classList.value = "show";
-//     }else if(modal.classList.value === "show"){
-//         modal.classList.value = "hide";
-//     }
-//     console.log(modal.classList.value);
-//   })
-// })
+const buttons = document.querySelectorAll("[data-modal-id]")
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    const modalId = button.dataset.modalId
+    const modal = document.getElementById(modalId)
+    if(modal.classList.value === ''){
+        modal.classList.add("show")
+    }else if(modal.classList.value === "hide"){
+        modal.classList.value = "show";
+    }else if(modal.classList.value === "show"){
+        modal.classList.value = "hide";
+    }
+    console.log(modal.classList.value);
+  })
+})
 
 // Element Classes
 const span1 = document.querySelector("#sp1");

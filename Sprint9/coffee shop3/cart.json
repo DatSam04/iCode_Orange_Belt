@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "title": "Iced Coffee",
+    "description": "A coffee with ice, typically served with a dash of milk, cream or sweetener—iced coffee is really as simple as that.",
+    "ingredients": [
+      "Coffee",
+      "Ice",
+      "Sugar*",
+      "Cream*"
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Blue_Bottle%2C_Kyoto_Style_Ice_Coffee_%285909775445%29.jpg",
+    "id": 21,
+    "type": "iced",
+    "amount": 1
+  }
+]

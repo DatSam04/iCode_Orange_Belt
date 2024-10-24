@@ -47,4 +47,5 @@ html,body{
 @keyframes animate {
   100%{
     filter: hue-rotate(360deg);
+  }
 }

@@ -79,34 +79,3 @@ function createPost(){
     // Send the request with the data
     xmlhttp.send(data);
 }
-
-// Use XMLHttpRequest methods to read and write data to a file
-// Read data from a file
-function fetchFileData(){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET', 'text.txt', true);
-
-    xmlhttp.onload = function(){
-        if(xmlhttp.status == 200){
-            console.log(xmlhttp.responseText);
-        }else{
-            console.error('Error: ' + xmlhttp.status);
-        }
-    }
-
-    xmlhttp.onerror = function(){
-        console.log('Request failed');
-    }
-
-    xmlhttp.send();
-}
-
-// Write data to a file
-function writeFile(){
-    var text = 'Hello World!';
-    var blob = new Blob([text], { type: 'text/plain'});
-    var link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-//    link.download = 'text.txt';
-    link.click();
-}
